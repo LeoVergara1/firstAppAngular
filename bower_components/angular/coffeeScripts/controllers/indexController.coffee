@@ -24,13 +24,15 @@ class IndexController
       ]
       $scope.entero = 8
       $scope.sizeList = $scope.model.length
+      $scope.cost = 0
       $scope.registrar = ->
         if $scope.nombre? and $scope.marca? and $scope.precio?
           console.log "Hay nombre"
           $scope.model.push
               marca: $scope.marca
               nombre: $scope.nombre
-              precio: $scope.precio
+              precio: parseFloat($scope.precio)
+
         else
           alert "Completa los datos porfavor"
 
@@ -38,6 +40,10 @@ class IndexController
         console.log $scope.marca
         console.log $scope.precio
         $scope.sizeList = $scope.model.length
+        $scope.cost = 0
+        for iterator in $scope.model
+          $scope.cost = $scope.cost + iterator.precio
+        console.log $scope.model.precio
 
 
   hello: () ->
