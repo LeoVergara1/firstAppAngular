@@ -31,8 +31,9 @@
         $scope.entero = 8;
         $scope.sizeList = $scope.model.length;
         $scope.cost = 0;
-        return $scope.registrar = function() {
+        $scope.registrar = function() {
           var i, iterator, len, ref;
+          console.log("Inicia");
           if (($scope.nombre != null) && ($scope.marca != null) && ($scope.precio != null)) {
             console.log("Hay nombre");
             $scope.model.push({
@@ -54,6 +55,11 @@
             $scope.cost = $scope.cost + iterator.precio;
           }
           return console.log($scope.model.precio);
+        };
+        return $scope.remove = function(index) {
+          console.log(index);
+          console.log("Removiendo...");
+          return $scope.model.splice(index, 1);
         };
       });
     };

@@ -24,6 +24,7 @@
         <li class="list-group-item" ng-repeat="m in model">
         <b>{{ m.marca }}</b> {{ m.nombre }} - USD {{ m.precio }}
         {{m.marca + m.nombre}}
+        <button class="btn btn-danger btn-xs pull-right" ng-click="remove($index)" type="button">Retirar</button>
         </li>
       </ul>
     <ul class="list-group">

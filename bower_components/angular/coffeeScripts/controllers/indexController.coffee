@@ -26,6 +26,7 @@ class IndexController
       $scope.sizeList = $scope.model.length
       $scope.cost = 0
       $scope.registrar = ->
+        console.log "Inicia"
         if $scope.nombre? and $scope.marca? and $scope.precio?
           console.log "Hay nombre"
           $scope.model.push
@@ -45,6 +46,10 @@ class IndexController
           $scope.cost = $scope.cost + iterator.precio
         console.log $scope.model.precio
 
+      $scope.remove = (index) ->
+        console.log index
+        console.log "Removiendo..."
+        $scope.model.splice(index, 1)
 
   hello: () ->
     console.log("Saludo")
