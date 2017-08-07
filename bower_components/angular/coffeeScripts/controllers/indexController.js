@@ -30,13 +30,15 @@
         ];
         $scope.entero = 8;
         $scope.sizeList = $scope.model.length;
+        $scope.cost = 0;
         return $scope.registrar = function() {
+          var i, iterator, len, ref;
           if (($scope.nombre != null) && ($scope.marca != null) && ($scope.precio != null)) {
             console.log("Hay nombre");
             $scope.model.push({
               marca: $scope.marca,
               nombre: $scope.nombre,
-              precio: $scope.precio
+              precio: parseFloat($scope.precio)
             });
           } else {
             alert("Completa los datos porfavor");
@@ -44,7 +46,14 @@
           console.log($scope.nombre);
           console.log($scope.marca);
           console.log($scope.precio);
-          return $scope.sizeList = $scope.model.length;
+          $scope.sizeList = $scope.model.length;
+          $scope.cost = 0;
+          ref = $scope.model;
+          for (i = 0, len = ref.length; i < len; i++) {
+            iterator = ref[i];
+            $scope.cost = $scope.cost + iterator.precio;
+          }
+          return console.log($scope.model.precio);
         };
       });
     };
