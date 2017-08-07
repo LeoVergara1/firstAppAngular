@@ -12,12 +12,13 @@
       <div class="row">
         <div class="col-xs-12">
 
-          <h1 class="jumbotron">Mi primera App Angular</h1>
+          <h1 class="jumbotron">Mi primera App Angular y Con CoffeeScript</h1>
           <!-- Content Body -->
-          hola {{ 'eduardo' + '!' }}
+          hola {{ 'Brandon' + '!' }}
         </div>
       </div>
     </div>
+    <div class="container">
     <div ng-controller="InstrumentosListadoCtrl">
       <ul class="list-group">
         <li class="list-group-item" ng-repeat="m in model">
@@ -40,15 +41,21 @@
         <button type="submit" class="btn btn-default">Agregar</button>
       </form>
       </li>
-      <li>
-      {{entero + entero}}
-      </li>
+      <div class="row">
+        <div class="col-lg-12">
+      {{entero + entero}} Esta la suma de dos enteros
+        </div>
+      </div>
       <li>
       Numero de elementos {{sizeList}}
+      </li>
+      <li>
+      Costo total de los productos {{cost}}
       </li>
 
     </div>
 
+  </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <script src="coffeeScripts/controllers/indexController.js"></script>
   </body>
